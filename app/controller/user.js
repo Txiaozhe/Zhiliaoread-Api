@@ -18,19 +18,18 @@ class UserController extends Controller {
 
   async login() {
     const req = this.ctx.request.body;
+    console.log(req);
     let res = {};
     try {
       const user = await this.ctx.service.user.login(req.name, req.pass);
       const enc = crypto.encrypt(req.pass);
       if(user[0].pass === enc) {
         res = {
-          status: 0,
           token: 'dvewhjdkqwedqwkdjqwdjqwdlkqwdwq'
         }
       }
     } catch (e) {
       res = {
-        status: 500,
         token: ''
       };
     }

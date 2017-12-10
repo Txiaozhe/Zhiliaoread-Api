@@ -76,43 +76,43 @@ var UserController = function (_Controller) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 req = this.ctx.request.body;
+
+                console.log(req);
                 res = {};
-                _context2.prev = 2;
-                _context2.next = 5;
+                _context2.prev = 3;
+                _context2.next = 6;
                 return this.ctx.service.user.login(req.name, req.pass);
 
-              case 5:
+              case 6:
                 user = _context2.sent;
                 enc = crypto.encrypt(req.pass);
 
                 if (user[0].pass === enc) {
                   res = {
-                    status: 0,
                     token: 'dvewhjdkqwedqwkdjqwdjqwdlkqwdwq'
                   };
                 }
-                _context2.next = 13;
+                _context2.next = 14;
                 break;
 
-              case 10:
-                _context2.prev = 10;
-                _context2.t0 = _context2['catch'](2);
+              case 11:
+                _context2.prev = 11;
+                _context2.t0 = _context2['catch'](3);
 
                 res = {
-                  status: 500,
                   token: ''
                 };
 
-              case 13:
+              case 14:
 
                 this.ctx.body = res;
 
-              case 14:
+              case 15:
               case 'end':
                 return _context2.stop();
             }
           }
-        }, _callee2, this, [[2, 10]]);
+        }, _callee2, this, [[3, 11]]);
       }));
 
       function login() {
