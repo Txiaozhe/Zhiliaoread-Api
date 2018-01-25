@@ -5,8 +5,8 @@ const connection = mysql.createConnection({
   host: '106.15.227.154',
   port: 3306,
   user: 'root',
-  password: 'Zhiliaoread.club2017',
-  database: 'zhiliaoread',
+  password: 'zhiliaoread-club',
+  database: 'zhiliao',
 });
 
 connection.connect();
